@@ -26,7 +26,6 @@ public class TransacaoController {
     	this.transacaoService = transacaoService;
     	this.mapper = mapper;
     }
-    
 	@PostMapping("/transacao")
 	public HttpEntity<TransacaoDTO> salvar(@RequestBody TransacaoDTO dto){
 		
