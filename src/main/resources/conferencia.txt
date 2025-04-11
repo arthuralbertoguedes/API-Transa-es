@@ -1,0 +1,2 @@
+> analisar estrutura de pacotes e como melhorar.
+
