@@ -27,6 +27,13 @@ public class Transacao {
 	public void setDataHora(OffsetDateTime dataHora) {
 		this.dataHora = dataHora;
 	}
+
+	@Override
+	public String toString() {
+		return "Transacao [valor=" + valor + ", dataHora=" + dataHora + "]";
+	}
+	
+	
 	
 	
 }

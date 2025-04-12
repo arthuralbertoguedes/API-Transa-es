@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.DesafioItau.mapper.TransacaoMapper;
 import br.com.DesafioItau.service.TransacaoService;
 import br.com.DesafioItau.web.dto.TransacaoDTO;
+import jakarta.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,14 +29,13 @@ public class TransacaoController {
     	this.mapper = mapper;
     }
 	@PostMapping("/transacao")
-	public HttpEntity<TransacaoDTO> salvar(@RequestBody TransacaoDTO dto){
+	public HttpEntity<TransacaoDTO> salvar(@RequestBody @Valid TransacaoDTO dto){
 		
 		logger.info("Iniciando processo para salvar nova transação...");
 		
-		
 		transacaoService.adicionarTransacao(mapper.toModel(dto));
 		
-		logger.info("Transações salvas: {}", transacaoService.getTransacoes());
+		logger.info("Transações salvas: {}", transacaoService.getTransacoes().toString());
 		
 		return null;
 	}
